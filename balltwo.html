@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>step-2</title>
+</head>
+<style>
+    .in {
+        margin-bottom: 5px;
+    }
+
+    .teamDataExp {
+        margin-top: 5px;
+    }
+</style>
+
+<body>
+    <h2 class="teamName in">팀 이름을 입력해주세요</h2>
+    <form class="js-teamform form">
+        <input type="text" placeholder="ex) 코코스쿼드">
+    </form>
+    <h2 class="teamData in">선수 데이터를 입력하세요</h2>
+    <p class="teamDataExp">(번호, 이름, 타율) 타율은 0.1보다 크고 0.5보다 작으며 소수 셋째 자리까지 입렵해주세요</p>
+
+    <form class="js-teamDataForm">
+        <input type="text" placeholder="ex) 1번, 김수진, 0.345">
+    </form>
+    <ul class="js-teamDataList">
+    </ul>
+    <script src="balltwo.js"></script>
+</body>
+
+</html>
