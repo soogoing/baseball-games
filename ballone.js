@@ -2,13 +2,13 @@
 //     document.getElementById('btn').innerHTML = "첫 번째 타자가 타석에 입장했습니다!";
 // }
 
-var result = document.getElementById('result');
-var strike = document.getElementById('strike');
-var ball = document.getElementById('ball');
-var out = document.getElementById('out');
-var strikeS = document.getElementById('strikeS');
-var ballB = document.getElementById('ballB');
-var outO = document.getElementById('outO');
+const result = document.getElementById('result'),
+    strike = document.getElementById('strike'),
+    ball = document.getElementById('ball'),
+    out = document.getElementById('out'),
+    strikeS = document.getElementById('strikeS'),
+    ballB = document.getElementById('ballB'),
+    outO = document.getElementById('outO');
 
 function baseballGame() {
     start = setInterval(function () {
