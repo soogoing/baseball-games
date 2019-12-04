@@ -15,21 +15,51 @@
     .teamDataExp {
         margin-top: 5px;
     }
+
+    .menu {
+        width: 100%;
+        height: 50px;
+    }
+
+    .menulinks {
+        float: left;
+        width: 120px;
+        height: 30px;
+        border: none;
+        outline: none;
+        font-size: 16px;
+        font-weight: bold;
+        color: rgb(167, 167, 167);
+    }
+
+    .menulinks.active {
+        color: #000;
+        background-color: #e9e9e9;
+    }
 </style>
 
 <body>
-    <h2 class="teamName in">팀 이름을 입력해주세요</h2>
-    <form class="js-teamform form">
-        <input type="text" placeholder="ex) 코코스쿼드">
-    </form>
-    <h2 class="teamData in">선수 데이터를 입력하세요</h2>
-    <p class="teamDataExp">(번호, 이름, 타율) 타율은 0.1보다 크고 0.5보다 작으며 소수 셋째 자리까지 입렵해주세요</p>
+    <div class="menu">
+        <button class="menulinks active" onclick="openmenu(event, 'menu1')">메뉴1</button>
+        <button class="menulinks" onclick="openmenu(event, 'menu2')">메뉴2</button>
+    </div>
 
-    <form class="js-teamDataForm">
-        <input type="text" placeholder="ex) 1번, 김수진, 0.345">
-    </form>
-    <ul class="js-teamDataList">
-    </ul>
+    <div id="menu1" class="menucontent" style="display: block;">
+        <h2 class="teamName in">팀 이름을 입력해주세요</h2>
+        <form class="js-teamform form">
+            <input type="text" placeholder="ex) 코코스쿼드">
+        </form>
+        <h2 class="teamData in">선수 데이터를 입력하세요</h2>
+        <p class="teamDataExp">(번호, 이름, 타율) 타율은 0.1보다 크고 0.5보다 작으며 소수 셋째 자리까지 입렵해주세요</p>
+
+        <form class="js-teamDataForm">
+            <input type="text" placeholder="ex) 1번, 김수진, 0.345">
+        </form>
+        <ul class="js-teamDataList">
+        </ul>
+    </div>
+
+    <div id="menu2" class="menucontent" style="display: none;"> 메뉴2 내용</div>
     <script src="balltwo.js"></script>
 </body>
 
