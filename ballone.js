@@ -1,54 +1,62 @@
-// document.getElementById('btn').onclick = function changeContent() {
-//     document.getElementById('btn').innerHTML = "첫 번째 타자가 타석에 입장했습니다!";
-// }
+$('.button').click(function () {
 
-const result = document.getElementById('result'),
-    strike = document.getElementById('strike'),
-    ball = document.getElementById('ball'),
-    out = document.getElementById('out'),
-    strikeS = document.getElementById('strikeS'),
-    ballB = document.getElementById('ballB'),
-    outO = document.getElementById('outO');
+    $('.gameArea').show();
 
-function baseballGame() {
-    start = setInterval(function () {
+    var strike = $('li:last').find('.strike').text();
+    var ball = $('li:last').find('.ball').text();
+    var out = $('li:last').find('.out').text();
 
-        var random = {};
+    function baseballGame() {
 
-        random.list = '스트라이크, 볼, 아웃! 다음 타자가 타석에 입장했습니다, 안타! 다음 타자가 타석에 입장했습니다'.split(',');
+        start = setInterval(function () {
+            var gameResult = new Array(4);
 
-        random.choice = function () {
-            var idx = Math.floor(Math.random() * this.list.length);
-            this.answer = this.list[idx];
-            this.letters = this.answer.split(',');
-            result.innerHTML = this.answer;
-        };
-        random.choice();
+            gameResult[0] = '스트라이크!';
+            gameResult[1] = '볼!';
+            gameResult[2] = '안타! 다음 타자가 타석에 입장했습니다.';
+            gameResult[3] = '아웃! 다음 타자가 타석에 입장했습니다.';
 
-        strike.innerHTML = 0;
-        ball.innerHTML = 0;
-        out.innerHTML = 0;
-        // var anta = 0;
+            var random = Math.floor(Math.random() * 4);
 
-        for (var i = 0; i < 3; i++) {
 
-            random.underDisplay = function () {
+            $('li:last').clone().appendTo('ul');
 
-                if (random.answer === random.list[0]) {
-                    strike.innerHTML++;
-                } else if (random.answer === random.list[1]) {
-                    ball.innerHTML++;
-                } else if (random.answer === random.list[2]) {
-                    out.innerHTML++;
-                } else {
-                    clearInterval(start);
+            $('li.resultNum:last').find('span.result').text(gameResult[random]);
+
+            $('li:last').find('.score').show();
+
+
+
+            if (random == 0) {
+                strike++;
+                $('li:last').find('.strike').text(strike);
+
+
+                if (strike == 3) {
+                    $('li:last .result').text('아웃! 다음 타자가 타석에 입장했습니다.');
+
+                    out++;
+                    $('li:last').find('.out').text(out);
+                    strike = 0;
+                    $('li:last').find('.strike').text(strike);
                 }
-            };
-            random.underDisplay();
-        }
+            } else if (random == 1) {
+                ball++;
+                $('li:last').find('.ball').text(ball);
 
-    }, 1000);
+                if (ball == 4) {
+                    $('li:last .result').text('아웃! 다음 타자가 타석에 입장했습니다.');
 
-}
+                    out++;
+                    $('li:last').find('.out').text(out);
+                    ball = 0;
+                    $('li:last').find('.ball').text(ball);
+                }
+            }
 
-baseballGame();
+        }, 1000);
+
+    }
+
+    baseballGame();
+});
