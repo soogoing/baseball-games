@@ -54,7 +54,16 @@ $('.button').click(function () {
                 }
             }
 
-        }, 1000);
+            if (out == 3) {
+                var num = $('.result').text();
+                var count = (num.match(/안타/g) || []).length;
+
+                $('li:last .result').text('최종 안타 수 : ' + count);
+                $('li:last .score').text('GAME OVER');
+
+                clearInterval(start);
+
+            }, 1000);
 
     }
 
