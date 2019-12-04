@@ -5,8 +5,47 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
     <title>step-1</title>
 </head>
+
+<style>
+    ul,
+    li {
+        list-style: none;
+        margin: 0;
+        padding: 0;
+        float: left;
+        width: 100%;
+    }
+
+    .button {
+        width: 125px;
+        height: 40px;
+        text-align: center;
+        line-height: 40px;
+        background: #000;
+        color: #fff;
+        cursor: pointer;
+    }
+
+    .gameArea {
+        display: none;
+    }
+
+    .gameArea li {
+        margin-bottom: 20px;
+    }
+
+    .score p {
+        float: left;
+        margin-right: 5px;
+    }
+
+    .score p span {
+        color: tomato;
+    }
+</style>
 
 <body>
     <p class="button">
@@ -27,6 +66,7 @@
             </li>
         </ul>
     </div>
+    <script src="ballone.js"></script>
 </body>
 
 </html>
