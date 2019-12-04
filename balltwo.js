@@ -25,6 +25,19 @@ function Datas() {
     }
 }
 
+function openmenu(evt, menuName) {
+    var menucontent = document.getElementsByClassName("menucontent");
+    var i;
+    for (i = 0; i < menucontent.length; i++) {
+        menucontent[i].style.display = "none";
+    }
+    var menulinks = document.getElementsByClassName("menulinks");
+    for (i = 0; i < menulinks.length; i++) {
+        menulinks[i].className = menulinks[i].className.replace(" active", "");
+    }
+    document.getElementById(menuName).style.display = "block";
+    evt.currentTarget.className += " active";
+}
 function init() {
     Datas();
     teamDataForm.addEventListener("submit", handleSubmit);
