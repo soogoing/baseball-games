@@ -9,16 +9,24 @@
 </head>
 
 <body>
-    <div id="btn">Game Start!</div>
-    <div id="btn">첫 번째 타자가 타석에 입장했습니다!</div>
+    <p class="button">
+        GAME START!
+    </p>
 
-    <div id="result" style="padding-top:30px;"></div>
-    <div id="score" style="display:flex;">
-        <p id="strikeS" style="padding-right:5px;"><span id="strike">0</span>S</p>
-        <p id="ballB" style="padding-right:5px;"><span id="ball">0</span>B</p>
-        <p id="outO"><span id="out">0</span>O</p>
+    <div class="gameArea">
+        <p>신나는 야구게임!<br>첫 번째 타자가 타석에 입장했습니다.</p>
+
+        <ul>
+            <li class="resultNum">
+                <span class="result"></span>
+                <div class="score" style="display:none;">
+                    <p><span class="strike">0</span>S</p>
+                    <p><span class="ball">0</span>B</p>
+                    <p><span class="out">0</span>O</p>
+                </div>
+            </li>
+        </ul>
     </div>
-    <script src="ballone.js"></script>
 </body>
 
 </html>
