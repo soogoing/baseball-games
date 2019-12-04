@@ -23,7 +23,6 @@ $('.button').click(function () {
 
             //경기 결과 출력
             $('li.resultNum:last').find('span.result').text(gameResult[random]);
-
             //스코어 보여주기
             $('li:last').find('.score').show();
 
@@ -31,9 +30,9 @@ $('.button').click(function () {
             //스코어 증가
             if (random == 0) {
                 strike++;
-                $('li:last').find('.strike').text(strike); // 스트라이크 스코어 +1
+                $('li:last').find('.strike').text(strike); //스트라이크 스코어 +1
 
-                // 3스트라이크 + 1아웃
+                //3 스트라이크 + 1아웃
                 if (strike == 3) {
                     $('li:last .result').text('아웃! 다음 타자가 타석에 입장했습니다.');
 
@@ -44,30 +43,30 @@ $('.button').click(function () {
                 }
             } else if (random == 1) {
                 ball++;
-                $('li:last').find('.ball').text(ball); // 볼 스코어 +1
+                $('li:last').find('.ball').text(ball); //볼 스코어 +1
 
-                // 4볼 + 1아웃
+                //4 볼 + 1아웃
                 if (ball == 4) {
                     $('li:last .result').text('아웃! 다음 타자가 타석에 입장했습니다.');
 
                     out++;
                     $('li:last').find('.out').text(out);
-                    ball = 0; // 볼 스코어 초기화
+                    ball = 0; //볼 스코어 초기화
                     $('li:last').find('.ball').text(ball);
                 }
             }
 
-            // 3아웃
+            //삼진아웃
             if (out == 3) {
-                var num = $('.result').text();
-                var count = (num.match(/안타/g) || []).length;
+                var num = $('.result').text(); //'안타' 찾기
+                var count = (num.match(/안타/g) || []).length; //'안타' 갯수
 
                 $('li:last .result').text('최종 안타 수 : ' + count);
                 $('li:last .score').text('GAME OVER');
 
                 clearInterval(start); //게임 종료
-
-            }, 1000); //1초간격으로 함수 실행
+            }
+        }, 1000); //1초간격으로 함수 실행
 
     }
 
